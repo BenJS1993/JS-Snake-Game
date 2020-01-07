@@ -8,4 +8,6 @@ function drawSnakePart(snakePart) {
     ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 }
 
-function drawSnake() { snake.forEach(drawSnakePart);}
+function drawSnake() { 
+    snake.forEach(drawSnakePart);
+}
