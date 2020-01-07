@@ -1,14 +1,14 @@
 body {
     background-color: wheat;
-}
-
-title {
-    font-size: 20px;
+    font-size: 50px;
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
+    font-weight: bolder;
+    text-align: center;
 }
 
 .snakeCanvas {
-    height: 300;
-    width: 300;
+    border-color: black;
+    border-style: solid;
+    border-width: 425px;
 }
