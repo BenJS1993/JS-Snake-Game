@@ -21,6 +21,7 @@ body {
 .snakeCanvas {
     width: 300;
     height: 300;
+    border: 100px;
     border-color: black;
     background-color: white;
 }
