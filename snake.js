@@ -6,9 +6,9 @@ let snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150},
 let nextSnake = [ {x: 160, y: 150}, {x: 150, y: 150}, {x: 140, y: 150}, 
     {x: 130, y: 150}, {x: 120, y: 150}]
 
-function drawsnakeCanvas(snakeCanvas) {
-    const snakeCanvas = document.getElementsByClassName("snakeCanvas");
-    const ctx = snakeCanvas.getContext("2d");
+function drawsnakeCanvas(canvas) {
+    let canvas = document.getElementsByClassName("snakeCanvas");
+    let ctx = canvas.getContext("2d");
     ctx.fillStyle = "#FFFFFF";
     ctx.fillRect = (0, 0, 150, 75);
 }

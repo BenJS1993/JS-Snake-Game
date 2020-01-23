@@ -19,8 +19,8 @@ body {
 }
 
 .snakeCanvas {
-    width: 300;
-    height: 300;
+    width: 300px;
+    height: 300px;
     position: absolute;
     border-color: black;
     background-color: white;
