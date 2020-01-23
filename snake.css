@@ -21,10 +21,14 @@ body {
 .snakeCanvas {
     width: 900px;
     height: 450px;
-    display: block;
+    display: flex;
     padding: 0;
     margin: auto;
     position: absolute;
     border-color: black;
     background-color: white;
+    top: 75px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
