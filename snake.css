@@ -1,20 +1,19 @@
 body {
     background-color: wheat;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .snakeTitle {
     font-size: 50px;
     color: black;
-    font-family: monospace;
     font-weight: bolder;
     text-align: center;
     margin: auto;
 }
 
 .snakeScore {
-    font-size: 45px;
+    font-size: 40px;
     color: black;
-    font-family: monospace;
     font-weight: bolder;
     text-align: center;
     margin: auto;
