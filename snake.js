@@ -3,8 +3,13 @@ const canvasBackgroundColour = "white";
 const snakeColour = "lightgreen";
 const snakeBorderColour = "darkgreen";
 
-let snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, 
-    {x: 120, y: 150}, {x: 110, y: 150},];
+let snake = [ 
+    {x: 150, y: 150},
+    {x: 140, y: 150},
+    {x: 130, y: 150}, 
+    {x: 120, y: 150},
+    {x: 110, y: 150},
+];
 
 let dx = 10
 
@@ -48,18 +53,22 @@ function changeDirection(event) {
     if (keyPressed === leftKey && !goingRight) { dx = -10; dy = 0; }
     if (keyPressed === upKey && !goingDown) { dx = 0; dy = -10; }
     if (keyPressed === rightKey && !goingLeft) { dx = 10; dy = 0; }
-    if (keyPressed === downKey && !goingUp) {dx = 0; dy = 10; }
+    if (keyPressed === downKey && !goingUp) { dx = 0; dy = 10; }
 }
 
-function advanceSnake() { const head = { x: snake[0].x + dx, y: snake[0].y + dy }  
-                            snake.unshift(head); 
-                            snake.pop(); }
+function advanceSnake() { 
+    const head = { 
+        x: snake[0].x + dx, y: snake[0].y + dy }  
+        snake.unshift(head); 
+        snake.pop();
+    }
 
-function clearCanvas() { ctx.fillstyle = "white"; 
-                            ctx.strokestyle = "black";
-                            ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height); 
-                            ctx.strokeRect(0, 0, snakeCanvas.width, snakeCanvas.height);
-                        }
+function clearCanvas() { 
+    ctx.fillstyle = "white"; 
+    ctx.strokestyle = "black";
+    ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height); 
+    ctx.strokeRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+    }
 
 function main() {
     setTimeout(function onTick() { 
