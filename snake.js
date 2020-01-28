@@ -27,3 +27,13 @@ function drawSnake() {
 function advanceSnake() { const head = {x: snake[0].x + dx, y: snake[0].y}  
                             snake.unshift(head); 
                             snake.pop(); }
+
+const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+
+function clearCanvas() { ctx.fillstyle = "white"; ctx.strokestyle = "black";
+                            ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height); 
+                                            ctx.strokeRect(0, 0, snakeCanvas.width, 
+                                                                snakeCanvas.height);
+                                                                }
+
+clearCanvas();advanceSnake();advanceSnake();advanceSnake();advanceSnake();advanceSnake();drawSnake();
