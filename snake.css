@@ -20,8 +20,6 @@ body {
 }
 
 .snakeCanvas {
-    width: 900px;
-    height: 450px;
     display: flex;
     padding: 0;
     margin: auto;
