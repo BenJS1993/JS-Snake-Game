@@ -27,11 +27,9 @@ function drawSnake() {
     snake.forEach(drawSnakePart);
 }
 
-function advanceSnake() { const head = {x: snake[0].x + dx, y: snake[0].y}  
+function advanceSnake() { const head = {x: snake[0].x + dx, y: snake[0].y + dy}  
                             snake.unshift(head); 
                             snake.pop(); }
-
-const head = {x: snake[0].x + dx, y: snake[0].y + dy};
 
 function clearCanvas() { ctx.fillstyle = "white"; ctx.strokestyle = "black";
                             ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height); 
