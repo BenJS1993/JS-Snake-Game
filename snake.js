@@ -39,6 +39,7 @@ function changeDirection(event) {
     const downKey = 40;
 
     const keyPressed = event.keycode;
+
     const goingUp = dy === -10;
     const goingDown = dy === 10;
     const goingRight = dx === 10;
@@ -50,15 +51,15 @@ function changeDirection(event) {
     if (keyPressed === downKey && !goingUp) {dx = 0; dy = 10; }
 }
 
-function advanceSnake() { const head = {x: snake[0].x + dx, y: snake[0].y + dy}  
+function advanceSnake() { const head = { x: snake[0].x + dx, y: snake[0].y + dy }  
                             snake.unshift(head); 
                             snake.pop(); }
 
-function clearCanvas() { ctx.fillstyle = "white"; ctx.strokestyle = "black";
+function clearCanvas() { ctx.fillstyle = "white"; 
+                            ctx.strokestyle = "black";
                             ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height); 
-                                            ctx.strokeRect(0, 0, snakeCanvas.width, 
-                                                                snakeCanvas.height);
-                                                                }
+                            ctx.strokeRect(0, 0, snakeCanvas.width, snakeCanvas.height);
+                        }
 
 function main() {
     setTimeout(function onTick() { 
