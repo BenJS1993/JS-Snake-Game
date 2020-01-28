@@ -39,4 +39,8 @@ function clearCanvas() { ctx.fillstyle = "white"; ctx.strokestyle = "black";
                                                                 snakeCanvas.height);
                                                                 }
 
-setTimeout(function onTick() { clearCanvas(); advanceSnake(); drawSnake(); },100);
+setTimeout(function onTick() { 
+    clearCanvas(); 
+    advanceSnake(); 
+    drawSnake(); 
+},100);
