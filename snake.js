@@ -3,8 +3,8 @@ let snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150},
 
     dx = +10
 
-let nextSnake = [ {x: 160, y: 150}, {x: 150, y: 150}, {x: 140, y: 150}, 
-    {x: 130, y: 150}, {x: 120, y: 150}]
+/*let nextSnake = [ {x: 160, y: 150}, {x: 150, y: 150}, {x: 140, y: 150}, 
+    {x: 130, y: 150}, {x: 120, y: 150}]*/
 
 const snakeCanvas = document.getElementsByClassName("snakeCanvas")
 const ctx = canvas.getContext("2d")
@@ -39,8 +39,12 @@ function clearCanvas() { ctx.fillstyle = "white"; ctx.strokestyle = "black";
                                                                 snakeCanvas.height);
                                                                 }
 
-setTimeout(function onTick() { 
+function main() {
+    setTimeout(function onTick() { 
     clearCanvas(); 
     advanceSnake(); 
-    drawSnake(); 
+    drawSnake();
+    
+    main();
 },100);
+}
