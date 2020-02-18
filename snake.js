@@ -141,7 +141,3 @@ function didGameEnd() {
 
         return hitLeftWall || hitRightWall || hitTopWall || hitBottomWall
 }
-
-function main() {
-    
-}
