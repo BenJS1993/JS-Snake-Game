@@ -8,6 +8,11 @@ const foodBackgroundColour = "red";
 const gameSpeed = 100;
 
 let score = 0;
+let changeDirection = false;
+let foodX;
+let foodY;
+let dx = 10;
+let dy = 0;
 
 let snake = [ 
     {x: 150, y: 150},
@@ -31,6 +36,23 @@ const ctx = canvas.getContext("2d")
 //     ctx.fillStyle = "#FFFFFF";
 //     ctx.fillRect = (0, 0, 150, 75);
 // }
+
+main();
+createFood();
+document.addEventListener("keydown", changeDirection);
+
+function main() {
+    if (didGameEnd()) return;
+
+    setTimeout(function onTick() {
+        changeDirection = false;
+        clearCanvas(); 
+        advanceSnake(); 
+        drawSnake();
+    
+        main();
+    }, gameSpeed);
+}
 
 function drawSnake() { 
     snake.forEach(drawSnakePart);
@@ -75,18 +97,6 @@ function clearCanvas() {
     ctx.fillRect(0, 0, snakeCanvas.width, snakeCanvas.height); 
     ctx.strokeRect(0, 0, snakeCanvas.width, snakeCanvas.height);
     }
-
-function main() {
-    if (didGameEnd()) return;
-
-    setTimeout(function onTick() { 
-        clearCanvas(); 
-        advanceSnake(); 
-        drawSnake();
-    
-        main();
-    }, gameSpeed);
-}
 
 function randomTen(min, max) {
     return Math.round((Math.random() * (max-min) + min) / 10) * 10;
