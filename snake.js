@@ -39,13 +39,13 @@ const ctx = canvas.getContext("2d")
 
 main();
 createFood();
-document.addEventListener("keydown", changeDirection);
+document.addEventListener("keydown", changeSnakeDirection);
 
 function main() {
     if (didGameEnd()) return;
 
     setTimeout(function onTick() {
-        changeDirection = false;
+        changeSnakeDirection = false;
         clearCanvas(); 
         advanceSnake(); 
         drawSnake();
@@ -70,6 +70,9 @@ function changeDirection(event) {
     const rightKey = 39;
     const upKey = 38;
     const downKey = 40;
+
+    if (changeSnakeDirection) return;
+    changeSnakeDirection = true;
 
     const keyPressed = event.keycode;
 
@@ -107,7 +110,7 @@ function createFood() {
     foodY = randomTen(0, gamecanvas.height - 10);
 
     snake.forEach(function isFoodOnSnake(part) {
-        const isFoodOnSnake = part.x == foodX && part.y == foodY
+        const foodIsOnSnake = part.x == foodX && part.y == foodY
         if (foodIsOnSnake)
         createFood();
     })
