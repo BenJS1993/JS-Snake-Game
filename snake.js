@@ -1,7 +1,11 @@
 const canvasBorderColour = "black";
 const canvasBackgroundColour = "white";
-const snakeColour = "lightgreen";
+const snakeBackgroundColour = "lightgreen";
 const snakeBorderColour = "darkgreen";
+const foodBorderColour = "darkred";
+const foodBackgroundColour = "red";
+
+let score = 0;
 
 let snake = [ 
     {x: 150, y: 150},
@@ -31,7 +35,7 @@ function drawSnake() {
 }
 
 function drawSnakePart(snakePart) {
-    Ctx.fillstyle = snakeColour;
+    Ctx.fillstyle = snakeBackgroundColour;
     Ctx.strokestyle = snakeBorderColour;
     Ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
     ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
@@ -96,8 +100,8 @@ function createFood() {
 }
 
 function drawFood() {
-    ctx.fillstyle = 'red';
-    ctx.strokestyle = 'darkred';
+    ctx.fillstyle = foodBackgroundColour;
+    ctx.strokestyle = foodBorderColour;
     ctx.fillRect(foodX, foodY, 10, 10);
     ctx.strokeRect(foodX, foodY, 10, 10);
 }
@@ -109,4 +113,23 @@ function main() {
         advanceSnake();
         drawSnake();
     main(); }, 100)
+}
+
+function advanceSnake() {
+    const head = {
+        x: snake[0].x + dx,
+        y: snake[0].y
+    };
+
+    snake.unshift(head);
+
+    const didEatfood = snake[0].x === foodX && snake[0].y === foodY;
+    if (didEatfood) {
+        score += 10;
+        document.getElementById('snakeScore').innerHTML = score;
+        
+        createFood();
+    } else {
+        snake.pop();
+    }
 }

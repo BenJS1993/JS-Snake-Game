@@ -11,7 +11,7 @@ body {
     margin: auto;
 }
 
-.snakeScore {
+#snakeScore {
     font-size: 40px;
     color: black;
     font-weight: bolder;
