@@ -79,3 +79,34 @@ function main() {
     main();
 },100);
 }
+
+function randomTen(min, max) {
+    return Math.round((Math.random() * (max-min) + min) / 10) * 10;
+}
+
+function createFood() { 
+    foodX = randomTen(0, gameCanvas.width - 10);
+    foodY = randomTen(0, gamecanvas.height - 10);
+
+    snake.forEach(function isFoodOnSnake(part) {
+        const isFoodOnSnake = part.x == foodX && part.y == foodY
+        if (foodIsOnSnake)
+        createFood();
+    })
+}
+
+function drawFood() {
+    ctx.fillstyle = 'red';
+    ctx.strokestyle = 'darkred';
+    ctx.fillRect(foodX, foodY, 10, 10);
+    ctx.strokeRect(foodX, foodY, 10, 10);
+}
+
+function main() {
+    setTimeout(function onTick() {
+        clearCanvas();
+        drawFood();
+        advanceSnake();
+        drawSnake();
+    main(); }, 100)
+}
